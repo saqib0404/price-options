@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      <Navbar className='md:w-full' />
       <h1 className="text-3xl font-bold underline">
         Hello world!
       </h1>

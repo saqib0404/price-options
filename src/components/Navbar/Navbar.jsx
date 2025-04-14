@@ -13,18 +13,23 @@ const Navbar = () => {
     ];
 
     return (
-        <ul className='md:flex text-2xl'>
-            <div onClick={() => setOpen(!open)} className='md:hidden'>
+        <ul className='md:flex text-2xl justify-center mx-2 rounded text-white md:my-2 font-semibold'>
+            <div onClick={() => setOpen(!open)}
+                className={`md:hidden my-2 bg-blue-400 pointer w-max cursor-pointer hover:bg-blue-700 py-1 px-2 rounded`}>
                 {
                     open ? <MdMenu /> : <AiOutlineCloseCircle />
                 }
             </div>
-            {
-                navItems.map(routes => <li className='mr-6'
-                    key={routes.id}>
-                    <a href={routes.path}>{routes.name}</a>
-                </li>)
-            }
+            <div className={`bg-blue-400 rounded duration-1000
+                ${open ? '-top-56' : 'top-11'}
+                absolute md:static md:flex py-1 px-4`}>
+                {
+                    navItems.map(routes => <li className='mr-6 my-2'
+                        key={routes.id}>
+                        <a className='hover:bg-blue-700 py-1 px-2 rounded' href={routes.path}>{routes.name}</a>
+                    </li>)
+                }
+            </div>
         </ul>
     )
 }
